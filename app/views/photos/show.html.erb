@@ -24,24 +24,7 @@
   <% end %>
 </ul>
 
-  <dt>Image url</dt>
-  <dd><%= @photo.image_url %></dd>
-
-
-  <dt>Caption</dt>
-  <dd><%= @photo.caption %></dd>
-
-
-  <dt>User</dt>
-  <dd><%= @photo.user_id %></dd>
-</dl>
-<div class="page-header">
-  <h1>Add Comment</h1>
-</div>
-
-
 <form action="/create_comment" class="form-horizontal">
-
   <!-- Label and input for content -->
   <div class="form-group">
 
@@ -49,22 +32,19 @@
       Content
     </label>
     <div class="col-sm-10">
-      <input type="hidden" id="photo.id" name="photo.id" placeholder="Photo" class="form-control" value="<%= @photo.id %>">
-
+      <textarea id="content" name="content" placeholder="comment" class="form-control" rows="3"></textarea>
     </div>
-
   </div>
-
 
   <!-- Label and input for photo_id -->
   <div class="form-group">
 
-    <label for="photo.id" class="col-sm-2 control-label">
+    <label for="content" class="col-sm-2 control-label">
       Photo
     </label>
     <div class="col-sm-10">
 
-      <input type="text" id="photo.id" name="photo.id" placeholder="Photo" class="form-control" value="<%= @comment.photo.id %>">
+      <input id="photo_id" name="photo_id" placeholder="Photo" class="form-control" value="<%= @photo.id %>">
 
     </div>
 
@@ -72,19 +52,15 @@
 
 
   <!-- Label and input for user_id -->
-  <div class="form-group">
-
+ <div class="form-group">
     <label for="user_id" class="col-sm-2 control-label">
-      User
-    </label>
-    <div class="col-sm-10">
+      </label>
 
-      <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @comment.user_id %>">
+   <div class="col-sm-10">
+     <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value= "<%= @user_id %>">
+   </div>
 
-    </div>
-
-  </div>
-
+ </div>
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
