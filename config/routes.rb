@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
- root 'photos#index'
+  devise_for :users
+  root 'photos#index'
 
   # Routes for the Favorite resource:
   # CREATE
