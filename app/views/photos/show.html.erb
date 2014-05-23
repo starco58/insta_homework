@@ -5,10 +5,17 @@
 <dl class="dl-horizontal">
   <dt>Source</dt>
   <dd><img src="<%= @photo.image_url %>" width="480"></dd>
-
+  <dt></dt><dd></dd>
   <dt>Caption</dt>
   <dd><%= @photo.caption %></dd>
 </dl>
+
+<div>
+  <form action="/favorites/new" class="form-horizontal">
+      <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Add to Favorites" class="btn btn-warning">
+  </form>
+</div>
 
 <ul class="media-list">
   <% @photo.comments.each do |comment| %>
@@ -23,6 +30,7 @@
     </li>
   <% end %>
 </ul>
+
 
 <form action="/create_comment" class="form-horizontal">
   <!-- Label and input for content -->
