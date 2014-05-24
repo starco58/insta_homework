@@ -4,6 +4,8 @@ gem 'starter_generators', :git => "git://github.com/rbetina/starter_generators.g
 
 gem 'devise'
 
+gem 'table_print'
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

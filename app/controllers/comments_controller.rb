@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
 
 
     if @comment.save
-      redirect_to "/comments", :notice => "Comment created successfully."
+      redirect_to "/photos/#{@comment.photo_id}", :notice => "Comment created successfully."
     else
       render 'new'
     end
