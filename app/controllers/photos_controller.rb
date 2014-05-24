@@ -18,7 +18,7 @@ class PhotosController < ApplicationController
 
     @photo.caption = params[:caption]
 
-    @photo.user_id = current_user.id
+    @photo.user_id = params[:user_id]
 
 
 
