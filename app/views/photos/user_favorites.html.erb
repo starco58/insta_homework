@@ -1,0 +1,36 @@
+<div class="page-header">
+    @my_favorite_photos = Favorite.find(current_user.id)
+  <h1>Photo #<%= @my_favorite_photos.id %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Source</dt>
+    @my_favorite_photos = Favorite.find(current_user.id)
+  <dd><img src="<%= @my_favorite_photos.image_url %>" width="360"></dd>
+  <dt></dt><dd></dd>
+  <dt>Caption</dt>
+    @my_favorite_photos = Favorite.find(current_user.id)
+  <dd><%= @my_favorite_photos.caption %></dd>
+</dl>
+
+<div>
+  <form action="/favorites/update" class="form-horizontal">
+      <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Add to Favorites" class="btn btn-warning">
+  </form>
+</div>
+
+<ul class="media-list">
+    @my_favorite_photos = Favorite.find(current_user.id)
+  <% @my_favorite_photos.comments.each do |comment| %>
+    <li class="media">
+      <a class="pull-left" href="#">
+        <img class="media-object" src="https://graph.facebook.com/todd.starcevich/picture" alt="...">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">Todd</h4>
+        <%= comment.content %>
+      </div>
+    </li>
+  <% end %>
+</ul>
