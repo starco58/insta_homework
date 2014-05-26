@@ -4,7 +4,7 @@ class FavoritesController < ApplicationController
   end
 
   def show
-    @favorite = Favorite.find_by(params[:user_id])
+    @favorite = Favorite.find_by(params[:id])
   end
 
   def new
@@ -16,7 +16,7 @@ class FavoritesController < ApplicationController
 
     @favorite.photo_id = params[:photo_id]
 
-    @favorite.user_id = current_user.id
+    @favorite.user_id = params[:user_id]
 
 
 
