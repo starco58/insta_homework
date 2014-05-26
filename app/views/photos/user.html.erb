@@ -19,7 +19,7 @@
   </thead>
 
   <tbody>
-    <%= @all_user_photos.each do |photo| %>
+    <% @all_user_photos.each do |photo| %>
       <tr>
 
         <td><img src="<%= photo.image_url %>" width="60"</td>
@@ -46,16 +46,5 @@
         </td>
 
       </tr>
-    <% end %><ul class="media-list">
-  <tbody>
-    <% @photos.each do |photo| %>
-      <tr>
+    <% end %>
 
-        <td><img src="<%= photo.image_url %>" width="60"</td>
-
-        <td><%= photo.caption %></td>
-
-        <td><%= photo.user_id %></td>
-      </tr>
-  <% end %>
-</ul>
