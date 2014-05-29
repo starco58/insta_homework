@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   def index
-    @photo = current_user.photos
+    @photo = Photo.all
   end
 
   def show
@@ -65,11 +65,11 @@ class PhotosController < ApplicationController
   end
 
 
-  # def user
+  def user
 
-  #   @all_user_photos = Photo.where(current_user.id)
+    @all_user_photos = current_user.photos
 
-  #   @my_favorite_photos = Favorite.where(current_user.id)
+    @my_favorite_photos = Favorite.where(current_user.id)
 
-  # end
+  end
 end
