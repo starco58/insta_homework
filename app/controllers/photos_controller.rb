@@ -69,7 +69,14 @@ class PhotosController < ApplicationController
 
     @all_user_photos = current_user.photos
 
-    @my_favorite_photos = Favorite.where(current_user.id)
+    # @my_favorite_photos = Favorite.where(:user_id => current_user.id)
 
   end
+
+  def user_favorites
+
+    @my_favorite_photos = current_user.favorite_photos
+
+  end
+
 end

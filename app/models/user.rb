@@ -8,4 +8,15 @@ class User < ActiveRecord::Base
   has_many :favorites
 
   has_many :favorite_photos, :through => :favorites, :source => :photo
+
+  # def favorite_photos
+  #   photos = []
+
+  #   favorites.each do |fav|
+  #     photos << fav.photo
+  #   end
+
+  #   return photos
+  # end
 end
+

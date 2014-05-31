@@ -54,7 +54,7 @@ Rails.application.routes.draw do
   get('/delete_photo/:id', { :controller => 'photos', :action => 'destroy' })
 
   get('/my_wall',         { :controller => 'photos', :action => 'user' })
-  get('/my_favorites',    { :controller => 'photos', :action => 'user' })
+  get('/my_favorites',    { :controller => 'photos', :action => 'user_favorites' })
 
 
   #------------------------------
